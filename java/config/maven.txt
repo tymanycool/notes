@@ -1,0 +1,15 @@
+1. maven镜像配置
+<mirrors>
+	<mirror>
+	  <id>alimaven</id>
+	  <name>aliyun maven</name>
+	  <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+	  <mirrorOf>central</mirrorOf>
+	</mirror>
+	<mirror>
+      <id>repo2</id>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://repo2.maven.org/maven2/</url>
+      <mirrorOf>central</mirrorOf>
+	</mirror>
+  </mirrors>
