@@ -1,0 +1,13 @@
+在使用SQLyog导入数据库时，出现了报错提示(数据库连接已断开）。查看后发现错误时由于导入时用的.sql文件过大导致的。
+
+首先查看了下.sql文件大小为360M，然后使用sql语句查询数据库最大支持的大小：
+
+SHOW GLOBAL VARIABLES LIKE 'max_allowed_packet';
+
+随后根据需求对该值进行修改：
+
+SET GLOBAL max_allowed_packet=1024*1024*400;
+
+此处是设置了400M大小的限制。
+
+如果后期再增加的话再改吧
