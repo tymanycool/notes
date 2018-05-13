@@ -3,3 +3,9 @@
 select * from tbl_test test GROUP BY name,age having count(*) >1;
 # 删除重复的数据 name,age为重复字段
 delete from tbl_test where id not in (SELECT tmp.id from (select id from tbl_test test GROUP BY name,age) tmp);
+
+# 复制表，只复制表头
+create table tbl_test2 like tbl_test;
+create table tbl_test4 select * from tbl_test where false;
+# 复制表，包括数据
+create table tbl_test3 select * from tbl_test;
