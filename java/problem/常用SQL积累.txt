@@ -1,0 +1,5 @@
+# MySql 亲测通过
+# 查询重复的数据 name,age为重复字段
+select * from tbl_test test GROUP BY name,age having count(*) >1;
+# 删除重复的数据 name,age为重复字段
+delete from tbl_test where id not in (SELECT tmp.id from (select id from tbl_test test GROUP BY name,age) tmp);
